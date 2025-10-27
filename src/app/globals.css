@@ -1,27 +1,63 @@
+/**
+ * استایل‌های سراسری اپلیکیشن - Global Application Styles
+ * این فایل شامل استایل‌های اصلی و سراسری پروژه است
+ * This file contains the main and global styles for the project
+ */
+
+/* وارد کردن فونت فارسی وزیرمتن - Import Persian Vazirmatn font */
+@import 'vazirmatn/Vazirmatn-font-face.css';
+
+/* وارد کردن استایل‌های پایه Tailwind - Import Tailwind base styles */
 @tailwind base;
+/* وارد کردن استایل‌های کامپوننت Tailwind - Import Tailwind component styles */
 @tailwind components;
+/* وارد کردن استایل‌های ابزار Tailwind - Import Tailwind utility styles */
 @tailwind utilities;
 
+/* متغیرهای CSS برای رنگ‌ها - CSS variables for colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* رنگ پس‌زمینه روشن - Light background color */
+  --foreground: #171717; /* رنگ متن تیره - Dark text color */
 }
 
+/* تنظیمات برای حالت تاریک - Dark mode settings */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a; /* رنگ پس‌زمینه تاریک - Dark background color */
+    --foreground: #ededed; /* رنگ متن روشن - Light text color */
   }
 }
 
+/* استایل‌های اصلی body - Main body styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground); /* استفاده از متغیر رنگ متن - Use text color variable */
+  background: var(--background); /* استفاده از متغیر رنگ پس‌زمینه - Use background color variable */
+  font-family: 'Vazirmatn', 'Tahoma', Arial, sans-serif; /* فونت فارسی - Persian font */
+  direction: rtl; /* جهت راست به چپ - Right to left direction */
 }
 
+/* لایه ابزارهای سفارشی - Custom utilities layer */
 @layer utilities {
+  /* کلاس برای تعادل متن - Text balance utility class */
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* استایل‌های سفارشی اسکرول‌بار - Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px; /* عرض اسکرول‌بار - Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* رنگ مسیر اسکرول‌بار - Scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1; /* رنگ دسته اسکرول‌بار - Scrollbar thumb color */
+  border-radius: 3px; /* گوشه‌های گرد - Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8; /* رنگ دسته اسکرول‌بار هنگام hover - Scrollbar thumb color on hover */
 }
